@@ -11,4 +11,10 @@ export class FoodService {
   getAll(): Food[] {
     return sampleFoods;
   }
+
+  getAllFoodsBySearchTerm(searchTerm: string): Food[] {
+    return this.getAll().filter((food) =>
+      food.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 }
